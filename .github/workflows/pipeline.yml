@@ -84,7 +84,7 @@ jobs:
       - name: docker login
         run: docker login -u rperi200 -p dckr_pat_yJFIZlZShCSifW2eqZPATz5c0Dk
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_IMAGE_NAME}}
+        run: docker build . --file Dockerfile --tag rperi200/mlops_api
 
       - name: Docker Push
-        run: docker push ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_IMAGE_NAME}}
+        run: docker push rperi200/mlops_api
