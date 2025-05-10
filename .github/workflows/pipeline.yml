@@ -82,7 +82,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: docker login
-        run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u "${{secrets.DOCKER_USER}}" --password-stdin
+        run: docker login -u rperi200 -p dckr_pat_yJFIZlZShCSifW2eqZPATz5c0Dk
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_IMAGE_NAME}}
 
